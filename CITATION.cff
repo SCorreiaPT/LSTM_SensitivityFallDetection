@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Correia"
+  given-names: "Sérgio D."
+  orcid: "https://orcid.org/0000-0003-1111-3513"
+- family-names: "Matos-Carvalho"
+  given-names: "João P."
+  orcid: "https://orcid.org/0000-0001-9409-7736"
+title: "Sensitivity Analysis of LSTM Networks for Fall Detection Wearable Sensors"
+version: 2.0.4
+doi: 
+date-released: 2023-01-20
+url: "https://github.com/SCorreiaPT/LSTM_SensitivityAnalysisFallDetection"
