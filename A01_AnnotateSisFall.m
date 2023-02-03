@@ -89,7 +89,7 @@ for i=1:15;         % Falls
             idcs = strfind(mydir, '/');
             newdir = mydir(1:idcs(end));
 
-            f = strcat(newdir,'data/SisFall_dataset/','F',z1,num2str(D(i)),'_','SA',z2,num2str(SA(j)),'_','R',z3,num2str(R(w)),'.txt');
+            f = strcat(newdir,'data/SisFall_dataset/','F',z1,num2str(D(i)),'_','SA',z2,num2str(SA(j)),'_','R',z3,num2str(w),'.txt');
             
             % Reads data file and scales
             data = readmatrix(f);
@@ -131,7 +131,7 @@ for i=1:19                                      % 19 Daily Activities (ADL)
             idcs = strfind(mydir, '/');
             newdir = mydir(1:idcs(end));
 
-            f = strcat(newdir,'data/SisFall_dataset/','D',z1,num2str(D(i)),'_','SA',z2,num2str(SA(j)),'_','R',z3,num2str(R(w)),'.txt');
+            f = strcat(newdir,'data/SisFall_dataset/','D',z1,num2str(D(i)),'_','SA',z2,num2str(SA(j)),'_','R',z3,num2str(w),'.txt');
             
             % Reads data file and scales
             data = readmatrix(f);
@@ -200,7 +200,7 @@ function [tt, tv, XT, YT, XV, YV] = run(fc, fss, Acc, wd, I, CLASS, FILTER, SCAL
             YV(tv,1) = categorical(cellstr(CLASS));
         else
             tmp = repmat({CLASS},length(Sl:Sr-1),1)';
-            tmp(1,1:floor(length(tmp)/FORCE_WINDOW_ADL)) = {'ADL'};
+            tmp(1,1:floor(length(tmp)/FORCE_WINDOW_ADL)) = {CLASS};
             YV(tv,1) = {categorical(tmp)};
             %YV(tv,1) = {categorical(repmat({CLASS},length(Sl:Sr-1),1)')};
         end
@@ -214,7 +214,7 @@ function [tt, tv, XT, YT, XV, YV] = run(fc, fss, Acc, wd, I, CLASS, FILTER, SCAL
             YT(tt,1) = categorical(cellstr(CLASS));
         else
             tmp = repmat({CLASS},length(Sl:Sr-1),1)';
-            tmp(1,1:floor(length(tmp)/FORCE_WINDOW_ADL)) = {'ADL'};
+            tmp(1,1:floor(length(tmp)/FORCE_WINDOW_ADL)) = {CLASS};
             YT(tt,1) = {categorical(tmp)};
             %YT(tt,1) = {categorical(repmat({CLASS},length(Sl:Sr-1),1)')};
         end
